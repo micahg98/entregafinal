@@ -1,0 +1,76 @@
+@use "../utilities/variables" as *;
+
+.header-principal {
+  padding: $space-xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: $space-lg;
+  min-height: 180px;
+  background-color: $color-light-gray;
+  background-image: url("../images/fondo-header.png");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .navbar,
+  .navbar .container-fluid,
+  .offcanvas {
+    background-color: transparent;
+  }
+
+  @media (max-width: ($breakpoint-desktop - 1px)) {
+    .offcanvas:not(.show) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1045;
+      width: min(400px, 100%);
+      height: 100vh;
+      visibility: hidden;
+      transform: translateX(100%);
+    }
+
+    .offcanvas.show {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    .offcanvas {
+      position: static;
+      visibility: visible;
+      transform: none;
+      background-color: transparent;
+      border: 0;
+    }
+    .offcanvas-header { display: none; }
+    .offcanvas-body { display: flex; padding: 0; justify-content: flex-end; align-items: flex-end; }
+
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    nav { flex: 0 0 auto; }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: $space-2xl $space-5xl;
+  }
+}
+
+.marca-contenedor {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+}
+
+.logo-contenedor {
+  figcaption {
+    font-size: $logo-caption-size;
+    color: $color-white;
+    text-align: center;
+  }
+}

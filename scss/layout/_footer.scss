@@ -1,0 +1,73 @@
+@use "../utilities/variables" as *;
+
+.footer-principal {
+  background-color: $color-purple;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-lg;
+
+  .titulo-terciario,
+  a,
+  .copyright,
+  .copyright p {
+    color: $color-white;
+    font-size: $font-size-card;
+    font-weight: $font-weight-medium;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.contenedor-footer {
+  flex: 1;
+  padding: $space-xl $space-xl 0 $space-xl;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-sm;
+  align-items: baseline;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: $space-xl $space-3xl;
+    flex-direction: row;
+    gap: $space-2xl;
+  }
+}
+
+.redes-lista {
+  display: flex;
+  list-style: none;
+  gap: $space-lg;
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+
+    &:hover { color: $color-white; }
+  }
+}
+
+.copyright {
+  background-color: $color-purple;
+  color: $color-white;
+  text-align: center;
+  padding: $space-lg;
+  margin-top: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 0;
+    padding: $space-xl $space-3xl;
+    background-color: transparent;
+    color: $color-white;
+    text-align: right;
+  }
+}

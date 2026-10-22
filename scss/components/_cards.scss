@@ -1,0 +1,274 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.tarjeta-proyecto {
+  display: grid;
+  grid-template-areas: "titulo-p" "desc-p" "galeria-p";
+  gap: $space-lg;
+
+  >.titulo-terciario {
+    grid-area: titulo-p;
+  }
+
+  >p {
+    grid-area: desc-p;
+    font-weight: $font-weight-card;
+  }
+
+  >.galeria-proyectos {
+    grid-area: galeria-p;
+  }
+}
+
+.texto-tarjeta-servicios {
+  font-family: $font-family-base;
+  font-weight: $font-weight-card;
+}
+
+.card-body {
+  .texto-presentacion-invitacion {
+    margin-top: $space-2xl;
+    margin-bottom: $space-lg;
+  }
+}
+
+.galeria-proyectos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY($card-hover-lift);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  img {
+    border-radius: $radius-sm;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  figcaption {
+    font-size: $font-size-sm;
+    color: $color-gray;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(auto-fit, minmax($project-grid-min-width, 1fr));
+    gap: $space-2xl;
+  }
+}
+
+.carrusel-proyecto {
+  position: relative;
+  border-radius: $radius-sm;
+  box-shadow: $carousel-shadow;
+  transition: box-shadow $transition-standard, transform $transition-standard;
+
+  &:hover {
+    box-shadow: $carousel-shadow-hover;
+    transform: translateY($carousel-hover-lift);
+  }
+
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: $color-white;
+  }
+
+  .carousel-item {
+    display: none;
+    position: relative;
+    width: 100%;
+
+    &.active {
+      display: block;
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      max-height: $carousel-max-height;
+      margin: 0 auto;
+      object-fit: contain;
+
+      @media (max-width: $breakpoint-mobile-max) {
+        max-height: $carousel-mobile-max-height;
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $carousel-control-width;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .carousel-control-prev {
+    left: 0;
+  }
+
+  .carousel-control-next {
+    right: 0;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: inline-block;
+    width: $carousel-icon-size;
+    height: $carousel-icon-size;
+    background-image: none;
+    border-top: $carousel-icon-border-width solid $color-purple;
+    border-right: $carousel-icon-border-width solid $color-purple;
+  }
+
+  .carousel-control-prev-icon {
+    transform: rotate(-135deg);
+  }
+
+  .carousel-control-next-icon {
+    transform: rotate(45deg);
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: $carousel-indicator-bottom;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 $carousel-control-width;
+    list-style: none;
+
+    button,
+    [data-bs-target] {
+      box-sizing: content-box;
+      flex: 0 1 auto;
+      width: $carousel-indicator-width;
+      height: $carousel-indicator-height;
+      margin-right: $carousel-indicator-spacing;
+      margin-left: $carousel-indicator-spacing;
+      padding: 0;
+      border: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      background-color: $color-purple;
+      background-clip: padding-box;
+      text-indent: -999px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity $transition-standard;
+    }
+
+    [data-bs-target] {
+      width: $carousel-indicator-width;
+      height: $carousel-indicator-height;
+      background-color: $color-white;
+      opacity: 0.5;
+    }
+
+    button.active,
+    [data-bs-target].active,
+    .active {
+      opacity: 1;
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+.card {
+  @extend %focus-ring;
+  box-shadow: $card-shadow;
+  transition: transform $transition-standard, box-shadow $transition-standard;
+
+  &:hover {
+    box-shadow: $card-shadow-hover;
+    transform: translateY($card-hover-lift);
+  }
+
+  &:focus-within {
+    @include focus-state;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.pagina-servicios {
+  .card {
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: $space-lg;
+      padding: $space-2xl;
+
+      @media (min-width: $breakpoint-tablet) {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.btn-primary {
+  align-self: center;
+  background-color: $color-purple;
+  border-color: $color-purple;
+  border-radius: $button-radius;
+  color: $color-white;
+  padding-inline: $button-inline-padding;
+  text-decoration: none;
+  width: fit-content;
+  @include interactive-transition(color, background-color, border-color, box-shadow, transform, font-weight);
+
+  &:hover {
+    background-color: $color-white;
+    border-color: $color-purple;
+    color: $color-purple;
+    box-shadow: $button-hover-shadow;
+    text-decoration: none;
+    text-underline-offset: $underline-offset;
+    transform: translateY($hover-lift) scale($button-hover-scale);
+  }
+
+  &:active {
+    background-color: $color-purple;
+    border-color: $color-purple;
+    color: $color-active;
+    font-weight: $font-weight-semibold;
+    transform: translateY(0);
+  }
+}

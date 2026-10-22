@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio web de Micaela Hernández Grau</title>
+  <meta name="description" content="Conocé la presentación profesional de Micaela Hernández Grau, diseñadora web, gráfica y UX/UI enfocada en crear experiencias digitales accesibles.">
+  <meta name="keywords" content="Micaela Hernández Grau, diseñadora web, diseño UX/UI, diseño gráfico, experiencia digital">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- CSS de Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpokY6ctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <!-- CSS stylesheet local -->
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body class="pagina-inicio">
+
+  <header class="header-principal" data-aos="fade-down" data-aos-duration="700">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <!-- Botón Hamburguesa que activa el Offcanvas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú Deslizable (Offcanvas) -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav menu-navegacion justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link enlace-navegacion" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link enlace-navegacion" href="pages/habilidades.html">Habilidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link enlace-navegacion" href="pages/proyectos.html">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link enlace-navegacion" href="pages/servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link enlace-navegacion" href="pages/contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="carouselInicio" class="carousel slide my-4 carrusel-proyecto container" data-bs-ride="carousel"
+    data-bs-interval="2500" data-bs-pause="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner rounded shadow">
+      <div class="carousel-item active">
+        <img src="images/Mock-up-flexy.jpeg" class="d-block w-100" alt="Mock-up del proyecto Flexy">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+          <p class="m-0">Proyecto Flexy</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/mock-up-irupe.jpg" class="d-block w-100" alt="Mock-up del proyecto Irupé">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+          <p class="m-0">Proyecto Irupé</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/mock-up-tarjetas-henko.jpg" class="d-block w-100" alt="Mock-up de tarjetas del proyecto Henko">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+          <p class="m-0">Proyecto Henko</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <main>
+    <div class="inicio-grid">
+      <figure class="foto-presentacion">
+        <img src="images/foto-presentacion.jpg"
+          alt="Foto de edificio catedral de La Plata, Argentina" data-aos="fade">
+        <figcaption>Te invito a conocer más sobre mí</figcaption>
+      </figure>
+
+      <section class="seccion-presentacion-inicio">
+        <h1 class="titulo-secundario">Presentación</h1>
+        <div class="texto-presentacion-inicio">
+          <p class="subtitulo-presentacion">Hola, soy Micaela Hernández Grau, Diseñadora web, Gráfica y UX/UI.</p>
+          <p class="texto-cuerpo-inicio">Diseño marcas, interfaces web y productos digitales combinando empatía, estructura y creatividad para crear experiencias fluidas, intuitivas y accesibles.</p>
+        </div>
+      </section>
+
+      <section class="seccion-servicios-inicio">
+        <article>
+          <h2 class="titulo-secundario">Servicios</h2>
+          <ul>
+            <li><i class="bi bi-vector-pen" aria-hidden="true"></i> <strong class="titulo-secundario">Diseño UX/UI:</strong> Investigación, usabilidad, arquitectura de
+              información, wireframes, prototipos interactivos y sistemas de diseño.</li>
+            <li><i class="bi bi-code-slash" aria-hidden="true"></i> <strong class="titulo-secundario">Diseño web:</strong> Diseño de sitios web responsivos con enfoque en la
+              experiencia del usuario y la accesibilidad.</li>
+            <li><i class="bi bi-palette" aria-hidden="true"></i> <strong class="titulo-secundario">Diseño gráfico:</strong> Identidad visual (logotipos, paleta cromática,
+              manual de marca), piezas digitales para redes y material gráfico impreso.</li>
+          </ul>
+          <a href="pages/proyectos.html" class="btn btn-primary">Ver proyectos</a>
+        </article>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <h2 class="titulo-terciario titulo-redes-sociales">Redes sociales</h2>
+      <ul class="redes-lista list-unstyled d-flex justify-content-center gap-3">
+        <li><a href="https://www.facebook.com" target="_blank"
+            class="text-decoration-none texto-red-facebook">Facebook</a></li>
+        <li><a href="https://www.instagram.com" target="_blank"
+            class="text-decoration-none texto-red-instagram">Instagram</a></li>
+        <li><a href="https://www.x.com" target="_blank" class="text-decoration-none texto-red-x">X</a></li>
+      </ul>
+    </div>
+    <div class="copyright text-center">
+      <p class="m-0 texto-copyright">© Copyright 2026</p>
+    </div>
+  </footer>
+  <!-- JavaScript de Bootstrap CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.carrusel-proyecto').forEach((elemento) => {
+        const carrusel = bootstrap.Carousel.getOrCreateInstance(elemento, {
+          interval: 2500,
+          pause: false
+        });
+
+        carrusel.cycle();
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 700, once: true });</script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+button {
+  @extend %focus-ring;
+  @include interactive-transition(color, background-color, border-color, box-shadow, transform, font-weight);
+
+  &:hover {
+    transform: translateY($hover-lift);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:active {
+    color: $color-active;
+    font-weight: $font-weight-semibold;
+    transform: translateY(0);
+  }
+}

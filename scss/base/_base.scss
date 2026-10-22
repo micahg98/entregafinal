@@ -1,0 +1,42 @@
+@use "../utilities/variables" as *;
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-white;
+  color: $color-black;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: $color-selection;
+  color: $color-black;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imagen-presentacion-index {
+  width: auto;
+  max-width: 100%;
+  max-height: $presentation-image-max-height;
+  object-fit: contain;
+  margin: 0 auto;
+}

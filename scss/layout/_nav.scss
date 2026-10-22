@@ -1,0 +1,102 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.menu-navegacion {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  gap: $space-md;
+  width: 100%;
+  padding-left: 0;
+  list-style: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: $nav-desktop-gap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.enlace-navegacion {
+  font-size: $font-size-nav;
+  white-space: nowrap;
+  font-weight: $font-weight-semibold;
+  color: $color-white;
+  text-decoration: none;
+  padding: $space-xs 0;
+  @include interactive-transition(color, background-color, font-weight, text-shadow);
+
+  &:hover {
+    color: $color-white;
+    text-decoration: underline;
+    text-underline-offset: $underline-offset;
+    text-shadow: $nav-link-shadow-hover;
+  }
+  &:focus { @include focus-state; color: $color-purple; }
+  &:active { color: $color-active; font-weight: $font-weight-semibold; }
+}
+
+.header-principal {
+  .navbar-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $menu-icon-size + $space-lg;
+    height: $menu-icon-size + $space-lg;
+    padding: $space-sm;
+    border: 1px solid rgba(110, 42, 173, 0.35);
+    border-radius: $button-radius;
+
+    &:hover,
+    &:focus {
+      border-color: $color-purple;
+      background-color: rgba(205, 180, 219, 0.2);
+    }
+  }
+
+  .navbar-toggler-icon {
+    position: relative;
+    display: block;
+    width: $menu-icon-size;
+    height: 1px;
+    background-image: none;
+    background-color: $color-purple;
+    border-radius: 1px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: $menu-icon-size;
+      height: 1px;
+      background-color: $color-purple;
+      border-radius: 1px;
+      content: "";
+    }
+
+    &::before { top: -0.4rem; }
+    &::after { top: 0.4rem; }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    .navbar-toggler { display: none; }
+  }
+}
+
+.navbar-brand,
+.redes-lista a {
+  @include interactive-transition(color, opacity, font-weight);
+
+  &:hover,
+  &:focus {
+    color: $color-purple;
+    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: $underline-offset;
+  }
+  &:focus { @include focus-state; }
+  &:active { color: $color-active; font-weight: $font-weight-semibold; }
+}

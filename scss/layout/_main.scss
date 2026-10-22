@@ -1,0 +1,340 @@
+@use "../utilities/variables" as *;
+
+.pagina-servicios,
+.pagina-contacto,
+.pagina-sobre-mi {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  > main { flex: 1; }
+}
+
+.pagina-servicios {
+  main {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    ul { list-style: none; }
+
+    > .seccion-contenedor {
+      grid-column: 1 / -1;
+    }
+
+    > .card {
+      align-self: center;
+      width: min($service-card-width, 100%);
+      margin-inline: auto;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      > .card {
+        align-self: stretch;
+        width: 100%;
+        margin-inline: 0;
+      }
+    }
+  }
+
+  .seccion-contenedor article > .titulo-secundario {
+    margin-bottom: $space-6xl;
+    text-align: center;
+  }
+}
+
+.pagina-contacto {
+  main {
+    text-align: center;
+    font-family: $font-family-base;
+    font-weight: $font-weight-regular;
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $space-6xl;
+      font-family: $font-family-base;
+      font-weight: $font-weight-regular;
+
+      img {
+        width: 100%;
+        max-width: $contact-image-max-width;
+        max-height: $contact-image-max-height;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+
+    .texto-contacto { font-weight: $font-weight-semibold; }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-family: $font-family-base;
+      font-weight: $font-weight-contact-data;
+      color: $color-purple;
+
+      .bi {
+        color: $color-purple;
+        margin-right: $space-xs;
+      }
+    }
+  }
+}
+
+.pagina-proyectos {
+  main,
+  .contenedor-footer,
+  .copyright {
+    text-align: center;
+  }
+}
+
+.pagina-inicio {
+  main {
+    text-align: left;
+  }
+
+  .inicio-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-3xl;
+    align-items: start;
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr) minmax(0, 1fr);
+      align-items: start;
+      gap: $space-2xl;
+    }
+  }
+
+  .seccion-presentacion-inicio {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    min-width: 0;
+    align-self: start;
+
+    > .titulo-secundario {
+      align-self: center;
+      margin: 0;
+      text-align: center;
+    }
+
+    .texto-presentacion-inicio {
+      display: flex;
+      flex-direction: column;
+      gap: $space-sm;
+      text-align: left;
+
+      > p:first-child { font-size: $font-size-md; }
+    }
+  }
+
+  .foto-presentacion {
+    width: min($presentation-image-home-width, $presentation-image-home-max-width);
+    margin: 0;
+    justify-self: start;
+    align-self: start;
+
+    > img {
+      width: 40%;
+      margin-inline: auto;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  .foto-presentacion figcaption { text-align: center; }
+}
+
+main {
+  padding: $space-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3xl;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    padding: $space-5xl $space-2xl;
+    gap: $space-5xl;
+  }
+}
+
+.seccion-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+
+  &:has(.foto-presentacion) {
+    display: grid;
+    grid-template-areas: "titulo" "foto" "texto1" "texto2";
+    gap: $space-lg;
+
+    > .titulo-secundario { grid-area: titulo; }
+    > .foto-presentacion { grid-area: foto; }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: $space-lg;
+
+      > p {
+        margin-bottom: 0;
+
+        &:nth-of-type(1) { grid-area: texto1; }
+        &:nth-of-type(2) { grid-area: texto2; }
+      }
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-areas: "titulo titulo" "foto texto";
+      grid-template-columns: 1fr minmax(0, 2fr);
+      column-gap: $space-4xl;
+      align-items: start;
+
+      > div { grid-area: texto; }
+    }
+  }
+}
+
+.seccion-servicios-inicio {
+  align-self: start;
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    padding: 0;
+    text-align: center;
+
+    > .titulo-secundario {
+      align-self: center;
+      margin: 0;
+      text-align: center;
+    }
+
+    > .btn {
+      align-self: center;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    padding-left: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  li {
+    font-weight: $font-weight-card;
+
+    > .titulo-secundario { font-size: $font-size-tertiary; }
+
+    > .bi {
+      color: $color-purple;
+      margin-right: $space-xs;
+    }
+  }
+}
+
+.seccion-sobre-mi {
+  align-items: center;
+  gap: $space-2xl;
+  padding: $space-lg;
+
+  .titulo-secundario,
+  > p {
+    width: 100%;
+    text-align: center;
+  }
+
+  figure {
+    align-self: center;
+    width: $about-image-width;
+    margin: 0;
+
+    img { width: 100%; height: auto; object-fit: contain; }
+  }
+
+  > p { font-weight: $font-weight-card; }
+
+  figcaption {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $space-3xl;
+    padding: $space-2xl;
+
+    figure { width: min($about-image-tablet-width, $about-image-tablet-max-width); }
+    .titulo-secundario { width: 100%; }
+    > p { width: min(100%, $about-copy-max-width); }
+    .formacion-contenedor { width: min(100%, $education-max-width); }
+  }
+}
+
+.formacion-contenedor {
+  width: 100%;
+  text-align: center;
+
+  .titulo-terciario {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-purple;
+    margin-bottom: $space-sm;
+  }
+}
+
+.lista-formacion {
+  .list-group-item {
+    text-align: left;
+    font-size: $font-size-card;
+    font-weight: $font-weight-regular;
+    line-height: $about-list-line-height;
+  }
+
+  .icono-formacion {
+    display: inline-block;
+    width: $about-icon-width;
+    margin-right: $space-sm;
+    color: $color-purple;
+  }
+}
+
+.foto-presentacion {
+  width: min($presentation-image-width, $presentation-image-max-width);
+  margin: 0 auto;
+
+  img {
+    border-radius: $radius-sm;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  figcaption {
+    font-size: $font-size-sm;
+    color: $color-gray;
+    margin-top: $space-xs;
+  }
+}
+
+p { margin-bottom: $space-sm; }

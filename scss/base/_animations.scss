@@ -1,0 +1,217 @@
+@use "../utilities/variables" as *;
+
+@keyframes page-reveal {
+  from {
+    opacity: 0;
+    transform: translateY($space-lg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes header-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-$space-sm);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-principal {
+  animation: header-reveal $animation-duration $animation-easing both;
+}
+
+@keyframes card-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY($space-md);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-button-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+main {
+  animation: page-reveal $animation-duration $animation-easing both;
+}
+
+.pagina-servicios .card {
+  .titulo-secundario {
+    animation: card-title-reveal $animation-duration $animation-easing both;
+  }
+
+  .btn-primary {
+    animation: card-button-reveal $animation-duration $animation-easing 0.15s both;
+  }
+}
+
+@keyframes image-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pagina-contacto main figure {
+  animation: image-reveal $animation-duration $animation-easing both;
+}
+
+.pagina-contacto main figure img {
+  transition: box-shadow $transition-standard, transform $transition-standard;
+
+  &:hover {
+    box-shadow: $contact-image-shadow;
+    transform: scale($contact-image-hover-scale);
+  }
+}
+
+@keyframes contact-message-reveal {
+  from {
+    opacity: 0;
+    transform: translateY($space-xs);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contact-detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(-$space-md);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes home-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY($space-md);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-subtitle-reveal {
+  from {
+    opacity: 0;
+    transform: translateY($space-sm);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pagina-sobre-mi .lista-formacion strong {
+  display: inline-block;
+  color: $color-purple;
+  animation: about-subtitle-reveal $animation-duration $animation-easing both;
+}
+
+.pagina-sobre-mi main>.seccion-sobre-mi>.titulo-secundario {
+  animation: home-title-reveal $home-title-animation-duration $animation-easing both;
+}
+
+.pagina-proyectos .tarjeta-proyecto>.titulo-saludo {
+  animation: home-title-reveal $home-title-animation-duration $animation-easing both;
+}
+
+.pagina-proyectos main>.seccion-contenedor:nth-of-type(2) .tarjeta-proyecto>.titulo-saludo {
+  animation-delay: $projects-title-delay;
+}
+
+.pagina-sobre-mi .seccion-sobre-mi figure img {
+  transition: box-shadow $transition-standard, transform $transition-standard;
+
+  &:hover {
+    box-shadow: $about-image-shadow;
+    transform: scale($about-image-hover-scale);
+  }
+}
+
+.pagina-sobre-mi .lista-formacion li:nth-child(2) strong {
+  animation-delay: $about-list-delay;
+}
+
+.lista-formacion li:nth-child(2) strong {
+  animation-delay: $about-list-delay;
+}
+
+.pagina-sobre-mi .lista-formacion li:nth-child(3) strong {
+  animation-delay: $about-list-delay * 2;
+}
+
+.lista-formacion li:nth-child(3) strong {
+  animation-delay: $about-list-delay * 2;
+}
+
+.pagina-sobre-mi .lista-formacion li:nth-child(4) strong {
+  animation-delay: $about-list-delay * 3;
+}
+
+.lista-formacion li:nth-child(4) strong {
+  animation-delay: $about-list-delay * 3;
+}
+
+.pagina-contacto main .texto-contacto {
+  animation: contact-message-reveal $contact-message-duration $animation-easing $contact-message-delay both;
+}
+
+.pagina-contacto main ul li {
+  animation: contact-detail-reveal $animation-duration $animation-easing both;
+
+  &:nth-child(2) {
+    animation-delay: $contact-text-delay;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html body *,
+  html body *::before,
+  html body *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}

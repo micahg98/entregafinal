@@ -1,0 +1,139 @@
+@use "../utilities/variables" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300..800&display=swap');
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+}
+
+.titulo-principal {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  line-height: 1.2;
+}
+
+.titulo-secundario {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-purple;
+}
+
+.subtitulo-presentacion {
+  font-size: $font-size-tertiary;
+  font-weight: $font-weight-semibold;
+  color: $color-purple;
+}
+
+.pagina-servicios .seccion-contenedor article .titulo-terciario {
+  font-size: $font-size-tertiary;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  color: $color-purple;
+}
+
+.titulo-terciario {
+  font-size: $font-size-tertiary;
+  font-weight: $font-weight-semibold;
+  color: $color-gray;
+}
+
+.texto-nav-marca,
+.texto-menu-titulo,
+.texto-nav-inicio,
+.texto-nav-sobre-mi,
+.texto-nav-proyectos,
+.texto-nav-servicios,
+.texto-nav-contacto,
+.titulo-presentacion,
+.titulo-saludo,
+.texto-presentacion-intro,
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-presentacion-invitacion,
+.titulo-servicios,
+.titulo-servicio-uxui,
+.texto-servicio-uxui,
+.titulo-servicio-web,
+.texto-servicio-web,
+.titulo-servicio-grafico,
+.texto-servicio-grafico,
+.titulo-redes-sociales,
+.texto-red-facebook,
+.texto-red-instagram,
+.texto-red-x,
+.texto-copyright,
+.texto-horarios {
+  letter-spacing: normal;
+}
+
+.texto-nav-marca {
+  font-size: $font-size-md;
+}
+
+.texto-menu-titulo {
+  font-size: $font-size-xl;
+}
+
+.texto-nav-inicio,
+.texto-nav-sobre-mi,
+.texto-nav-proyectos,
+.texto-nav-servicios,
+.texto-nav-contacto {
+  font-size: $font-size-nav;
+}
+
+.titulo-presentacion,
+.titulo-servicios,
+.titulo-redes-sociales {
+  font-size: $font-size-lg;
+}
+
+.titulo-presentacion,
+.titulo-saludo {
+  color: $color-purple;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  margin-bottom: $space-lg;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-servicio-uxui,
+.texto-servicio-web,
+.texto-servicio-grafico {
+  font-size: $font-size-md;
+}
+
+.texto-cuerpo-inicio {
+  font-weight: $font-weight-card;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion {
+  line-height: 1.8;
+  font-weight: $font-weight-body;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-servicio-uxui,
+.texto-servicio-web,
+.texto-servicio-grafico {
+  font-weight: $font-weight-regular;
+}
+
+.texto-red-facebook,
+.texto-red-instagram,
+.texto-red-x {
+  font-size: $font-size-md;
+}
+
+.texto-copyright,
+.texto-horarios {
+  font-size: $font-size-sm;
+}

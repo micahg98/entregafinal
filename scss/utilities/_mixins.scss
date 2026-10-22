@@ -1,0 +1,27 @@
+@use "sass:list";
+@use "variables" as *;
+
+@mixin focus-state {
+  outline: $focus-width solid $color-black;
+  outline-offset: $focus-offset;
+}
+
+%focus-ring {
+  &:focus {
+    @include focus-state;
+  }
+}
+
+@mixin interactive-transition($properties...) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: list.append($transitions, $property $transition-standard, comma);
+  }
+
+  transition: $transitions;
+}
+
+@mixin interactive-button {
+  @include interactive-transition(color, background-color, border-color, box-shadow, transform, font-weight);
+}
